@@ -1,0 +1,148 @@
+[
+    
+
+        {
+            "id": 1,
+            "name": "squad_1",
+            "is_deleted": false,
+            "parent_id": null
+        },
+        {
+            "id": 2,
+            "name": "squad_2",
+            "is_deleted": false,
+            "parent_id": null
+        },
+        {
+            "id": 3,
+            "name": "squad_3",
+            "is_deleted": false,
+            "parent_id": null
+        },
+        {
+            "id": 4,
+            "name": "dapartment_1",
+            "is_deleted": false,
+            "parent_id": 1
+        },
+        {
+            "id": 5,
+            "name": "dapartment_2",
+            "is_deleted": false,
+            "parent_id": 1
+        },
+        {
+            "id": 6,
+            "name": "dapartment_3",
+            "is_deleted": false,
+            "parent_id": 1
+        },
+        {
+            "id": 4,
+            "name": "dapartment_1",
+            "is_deleted": false,
+            "parent_id": 2
+        },
+        {
+            "id": 5,
+            "name": "dapartment_2",
+            "is_deleted": false,
+            "parent_id": 2
+        },
+        {
+            "id": 6,
+            "name": "dapartment_3",
+            "is_deleted": false,
+            "parent_id": 2
+        },
+        {
+            "id": 7,
+            "name": "dapartment_1",
+            "is_deleted": false,
+            "parent_id": 3
+        },
+        {
+            "id": 8,
+            "name": "dapartment_2",
+            "is_deleted": false,
+            "parent_id": 3
+        },
+        {
+            "id": 9,
+            "name": "dapartment_3",
+            "is_deleted": false,
+            "parent_id": 3
+        },
+        {
+            "id": 10,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 4
+        },
+        {
+            "id": 11,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 5
+        },
+        {
+            "id": 12,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 6
+        },
+        {
+            "id": 13,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 7
+        },
+        {
+            "id": 14,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 8
+        },
+        {
+            "id": 15,
+            "name": "class_1",
+            "is_deleted": false,
+            "parent_id": 9
+        },
+        {
+            "id": 16,
+            "U_id":"123b-123v-3df3-3fds",
+            "name": "Shlomi",
+            "is_deleted": false,
+            "parent_id": 9
+        },
+        
+        
+
+
+
+
+        {
+            "squad_1":{
+                "name":"squad_1",
+                "id":2,
+                "parent_id":1,
+                "department_1":{
+                    "name":"department_1",
+                    "id":3,
+                    "parent_id":3,
+                    "class_1":{
+                        "name":"class_1",
+                        "id":4,
+                        "soldier_1":{
+                            "name":"soldier_1",
+                            "id":4  
+                        }
+                    }
+                }
+            }
+        }
+        
+    
+    
+]

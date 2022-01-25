@@ -1,0 +1,75 @@
+<%- include('./includes/head.ejs') %>
+
+<link rel="stylesheet" href="treeview.min.css" />
+<script src="treeview.min.js"></script>
+<link rel="stylesheet" href="/css/treeview.css">
+</head>
+    <%- include('./includes/navigation.ejs') %>
+    <nav>
+      <div class="dropdown">
+        <h1>Sum of Soliders</h1>
+        <ul id="myUL">
+          <li><span class="caret"><button class="btn">1 פלוגה</button></span>
+            <ul class="nested">
+              <li><span class="caret"><button class="btn">1 מחלקה</button></span>
+                <ul class="nested">
+                  <li><span class="caret"><button class="btn">1 כיתה</button></span>
+                    <ul class="nested">
+                      <li><button class="btn">1 </button></li>
+                      <li><button class="btn">2 חייל</button></li>
+                      <li><button class="btn">3 חייל</button></li>
+                      <li><button class="btn">4 חייל</button></li>
+                    </ul>
+                  </li>
+                  <li><span class="caret"><button class="btn">2 כיתה</button></span>
+                    <ul class="nested">
+                      <li><button class="btn">1 חייל</button></li>
+                      <li><button class="btn">2 חייל</button></li>
+                      <li><button class="btn">3 חייל</button></li>
+                      <li><button class="btn">4 חייל</button></li>
+                    </ul>
+                  </li>
+                  <li><span class="caret"><button class="btn">2 כיתה</button></span>
+                    <ul class="nested">
+                      <li><button class="btn">1 חייל</button></li>
+                      <li><button class="btn">2 חייל</button></li>
+                      <li><button class="btn">3 חייל</button></li>
+                      <li><button class="btn">4 חייל</button></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <form class="form" method="POST">
+        <div class="form-control">
+            <label for="title">Title</label>
+        </div>
+        <div class="form-control">
+            <label for="imageUrl">Image URL</label>
+        </div>
+        <div class="form-control">
+            <label for="price">Price</label>
+        </div>
+        <div class="form-control">
+            <label for="description">Description</label>
+        </div>
+
+
+    </form>
+  </body>
+  <script type="text/javascript">
+    var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+toggler[i].addEventListener("click", function() {
+this.parentElement.querySelector(".nested").classList.toggle("active");
+this.classList.toggle("caret-down");
+});
+}
+</script>
+  </html>
