@@ -20,6 +20,9 @@
 
 
     </div>
+    <div  class = "scrolling-area">
+
+      <div class= "scrolling-element-inside">
     <% for(let i=0;i< forcesLength; i++) { %>
       <% force_Squad = forceObjs[i]; %>
       <% if(force_Squad.parent_id == null){ %>
@@ -52,25 +55,11 @@
             </li>
             <% } %>
       <% } %>
-
-
+</div>
+</div>
     
-      <form class="form" method="POST">
-        <div class="form-control">
-            <label for="title">Title</label>
-        </div>
-        <div class="form-control">
-            <label for="imageUrl">Image URL</label>
-        </div>
-        <div class="form-control">
-            <label for="price">Price</label>
-        </div>
-        <div class="form-control">
-            <label for="description">Description</label>
-        </div>
 
 
-    </form>
   </body>
   <script type="text/javascript">
     var toggler = document.getElementsByClassName("caret");

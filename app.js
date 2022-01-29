@@ -31,7 +31,8 @@ app.get('/soldiers/:U_id', (req,res,next) =>{
 });
 //sum soldiers
 app.get('/sum-of-soldiers', (req,res,next) =>{
-    res.render('SumSoldiers', {pageTitle: 'Sum Soldiers',path: "/sumSoldier"});
+    force_Id = req.params.force;
+    res.render('SumSoldiers', {pageTitle: 'Sum Soldiers',path: "/sumSoldier",force_Id});
 });
 //sum soldiers Req
 app.get('/sum-of-soldiers/:force', (req,res,next) =>{

@@ -22,20 +22,20 @@
         "id":4,
         "soldier_id":"a123-b312-d2136",
         "exercise_id":1,
-        "grade":10
+        "grade":1000
     },
     {
         "id":5,
         "soldier_id":"a123-b312-d2136",
         "exercise_id":2,
-        "grade":40
+        "grade":4000
     },
 
     {
         "id":6,
         "soldier_id":"a123-b312-d2136",
         "exercise_id":3,
-        "grade":20
+        "grade":2000
     },
     {
         "id":7,
@@ -54,61 +54,169 @@
         "id":9,
         "soldier_id":"a123-b312-d2f36",
         "exercise_id":3,
-        "grade":67
+        "grade":11
     },
     {
         "id":10,
         "soldier_id":"a123-b312-d2236",
         "exercise_id":1,
-        "grade":67
+        "grade":32
     },
     {
         "id":11,
         "soldier_id":"a123-b312-d2236",
         "exercise_id":2,
-        "grade":67
+        "grade":48
     },
     {
         "id":12,
         "soldier_id":"a123-b312-d2236",
         "exercise_id":3,
-        "grade":67
+        "grade":32
     },
     {
         "id":13,
         "soldier_id":"a123-b312-sd236",
         "exercise_id":1,
-        "grade":67
+        "grade":15
     },
     {
         "id":14,
         "soldier_id":"a123-b312-sd236",
         "exercise_id":2,
-        "grade":67
+        "grade":12
     },
     {
         "id":15,
         "soldier_id":"a123-b312-sd236",
         "exercise_id":3,
-        "grade":67
+        "grade":42
     },
     {
         "id":16,
         "soldier_id":"a123-b3112-d236",
         "exercise_id":1,
-        "grade":67
+        "grade":16
     },
     {
         "id":17,
         "soldier_id":"a123-b3112-d236",
         "exercise_id":2,
-        "grade":67
+        "grade":26
     },
     {
         "id":18,
         "soldier_id":"a123-b3112-d236",
         "exercise_id":3,
-        "grade":67
+        "grade":18
+    },
+    {
+        "id":19,
+        "soldier_id":"a123-b3128g-d236",
+        "exercise_id":1,
+        "grade":28
+    },
+    {
+        "id":20,
+        "soldier_id":"a123-b3128g-d236",
+        "exercise_id":2,
+        "grade":38
+    },
+    {
+        "id":21,
+        "soldier_id":"a123-b3128g-d236",
+        "exercise_id":3,
+        "grade":12
+    },
+    {
+        "id":22,
+        "soldier_id":"a123-b31522-d2136",
+        "exercise_id":1,
+        "grade":14
+    },
+    {
+        "id":23,
+        "soldier_id":"a123-b31522-d2136",
+        "exercise_id":2,
+        "grade":31
+    },
+    {
+        "id":24,
+        "soldier_id":"a123-b31522-d2136",
+        "exercise_id":3,
+        "grade":23
+    },
+    {
+        "id":25,
+        "soldier_id":"a123-b3122-d2f36",
+        "exercise_id":1,
+        "grade":22
+    },
+    {
+        "id":26,
+        "soldier_id":"a123-b3122-d2f36",
+        "exercise_id":2,
+        "grade":18
+    },
+    {
+        "id":27,
+        "soldier_id":"a123-b3122-d2f36",
+        "exercise_id":3,
+        "grade":16
+    },
+    {
+        "id":28,
+        "soldier_id":"a123-b312-d22836",
+        "exercise_id":1,
+        "grade":41
+    },
+    {
+        "id":29,
+        "soldier_id":"a123-b312-d22836",
+        "exercise_id":2,
+        "grade":34
+    },
+    {
+        "id":30,
+        "soldier_id":"a123-b312-d22836",
+        "exercise_id":3,
+        "grade":13
+    },
+    {
+        "id":31,
+        "soldier_id":"a123-b3125-sd236",
+        "exercise_id":1,
+        "grade":11
+    },
+    {
+        "id":32,
+        "soldier_id":"a123-b3125-sd236",
+        "exercise_id":2,
+        "grade":21
+    },
+    {
+        "id":33,
+        "soldier_id":"a123-b3125-sd236",
+        "exercise_id":3,
+        "grade":32
+    },
+    {
+        "id":34,
+        "soldier_id":"a123-b31142-d236",
+        "exercise_id":1,
+        "grade":210
+    },
+    {
+        "id":35,
+        "soldier_id":"a123-b31142-d236",
+        "exercise_id":2,
+        "grade":320
+    },
+    {
+        "id":36,
+        "soldier_id":"a123-b31142-d236",
+        "exercise_id":3,
+        "grade":340
     }
     
 ]
