@@ -6,10 +6,10 @@ const path = require('path');
 
 const app = express();
 
-const Data = require('./controllers/Soldiers')
-const soldiersData = require('./controllers/Results')
-const forcesData = require('./controllers/Forces')
-const exercisesData = require('./controllers/exercises')
+const Data = require('./Routes/Soldiers')
+const soldiersData = require('./Routes/Results')
+const forcesData = require('./Routes/Forces')
+const exercisesData = require('./Routes/exercises')
 app.set('view engine', 'ejs');
 
 app.set('views', 'views')
