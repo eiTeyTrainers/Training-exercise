@@ -5,6 +5,7 @@ ul, #myUL {
   
   /* Remove margins and padding from the parent ul */
   #myUL {
+    
     margin: 0;
     padding: 0;
     
@@ -12,14 +13,15 @@ ul, #myUL {
   
   /* Style the caret/arrow */
   .caret {
-    
+
     color:black;
     cursor: pointer;
     user-select: none; /* Prevent text selection */
   }
   .btn{
+    text-decoration: none;
     display: block;
-    width: 14%;
+    width: 20%;
     border: none;
     background-color: #050a08;
     padding: 14px 16px;
@@ -34,6 +36,7 @@ ul, #myUL {
     color: black;
     display: inline-block;
     margin-right: 5px;
+    transform: scale(1.5,1.5);
   }
   .form { 
     margin: 0 auto; 
@@ -54,16 +57,21 @@ ul, #myUL {
     align-items: center;
     width: 90%;
     margin: auto;
+
+
 }
 
 
 /* Hide the nested list */
 .nested {
+    
     display: none;
 }
 
 /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
 .active {
+  
     display: block;
     color: rgb(255, 255, 255);
+    
   }

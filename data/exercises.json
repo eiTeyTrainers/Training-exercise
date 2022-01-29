@@ -1,0 +1,20 @@
+[
+    {
+        "id":"1",
+        "Name":"מתח",
+        "Max_reqiurements": "12",
+        "requirement_Min": "5"
+    },
+    {
+        "id":"2",
+        "Name":"מקבילים",
+        "Max_reqiurements": "30",
+        "requirement_Min": "1"
+    },
+    {
+        "id":"3",
+        "Name":"שכיבות סמיכה",
+        "Max_reqiurements": "60",
+        "requirement_Min": "30"
+    }
+]

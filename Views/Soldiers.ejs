@@ -1,26 +1,72 @@
 <%- include('./includes/head.ejs') %>
-<link rel="stylesheet" href="/css/SoldierProfiles.css">
-</head>
-<body>
-    <%- include('./includes/navigation.ejs') %>
-    <h1>Soliders</h1>
-    <div class="container mt-5 d-flex justify-content-center">
-        <div class="card p-3 ">
-            <div class="d-flex align-items-center">
-                <div class="ml-3 w-100">
-                    <h4 class="mb-0 mt-0"></h4> <span>sadf</span>
-                    <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
-                        <div class="d-flex flex-column"> <span class="articles">Articles</span> <span class="number1">38</span> </div>
-                        <div class="d-flex flex-column"> <span class="followers">Followers</span> <span class="number2">980</span> </div>
-                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">8.9</span> </div>
-                        <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3"></span> </div>
 
-                            <li>f</li>
-                    </div>
+<link rel="stylesheet" href="../public/css/SoliderProfiles.css" />
+</head>
+<body style="background-color: rgb(12, 12, 12);">
+    <%- include('./includes/navigation.ejs') %>
+</li>
+<h1 style="color: white;">Soliders</h1>
+
+<div class="soldier-info">
+
+        <a class="exit-btn" href="/soldiers/"><div class="inner-circle"></div></a>
+        <% for(let i=0;i<resultsLength; i++) { %>
+            <% result = soldiersResults[i]; %>
+            <% if(result.soldier_id === U_id){ %>
+                
+                
+                <% for(let i=0;i<exercisesLength; i++) { %>
+                    <% exercise = exerciseObjs[i]; %>
+                        <% if(exercise.id == result.exercise_id){ %>
+                            <h1>
+                                <%= exercise.max_requirement %>
+                            </h1>
+                    <% } %>
+            
+                <% } %>
+                <% if(result.exercise_id == 1){%>
+                    <h1 style="text-align:center; padding:10; top:5em;" > <%= result.grade %>: מתח</h1>
+                    <% } %>
+                    <% if(result.exercise_id == 2){%>
+                        <h1 style="text-align:center; top:10em;" > <%= result.grade %>: מקבילים</h1>
+                        <% } %>
+                        <% if(result.exercise_id == 3){%>
+                            <h1 style="text-align:center; top:15em; " > <%= result.grade %>: שכיבות סמיכה</h1>
+                            <% } %>
+                            <% } else if(i==1 && U_id == "") { %>
+                                <h1 style="text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
+                                <% } %>
+                                
+                                <% } %>
+                                
+
+
+                
+
+    </div>
+<div  class = "scrolling-area">
+
+    <div class= "scrolling-element-inside">
+    <% for(let i=0; i < soldiersLength; i++) { %>
+        <% soldier = soldierProfiles[i]; %>
+        
+        <a id="<%= soldier.U_id %>" class="<%= U_id === soldier.U_id ? 'active-soldier-btn' : 'soldier-btn' %>" href="/soldiers/<%= soldier.U_id %>">
+                <header class="card__header">
+                    <article >
+                    <h1 class="soldierName soldier-text" style="position: absolute; right: 2em; display:inline;">שם: <%= soldier.Name %></h1>
+                    <h1 class="U_id soldier-text"><%= soldier.U_id %> : מספר אישי</h1>
+                    <h1 class="Force_id" style="position: absolute; right: 2em; display:inline; top:3.2em;"><%= soldier.Force_id %>: כיתה</h1>
+                    <h1 class="id" style="position: absolute; top:3.2em">ID: <%= soldier.id %></h1>
+                    </article>
+                </header>
+            </a>
+
+
+                    <% } %>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
     
-
+</div>
     <%- include('./includes/end.ejs') %> 

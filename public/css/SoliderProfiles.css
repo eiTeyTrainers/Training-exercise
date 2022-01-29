@@ -9,7 +9,23 @@ body {
     border-radius: 100px;
     background-color: #fff
 }
-
+.graybox {
+    float: left;
+    height: 100px;
+    width: 400px;
+    line-height: 100px;
+    transform-origin: 100% 50%;
+    animation: main .5s;
+  }
+  
+  @keyframes main {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
 .stats {
     background: #f2f5f8 !important;
     color: #000 !important
@@ -41,3 +57,14 @@ body {
 .number3 {
     font-weight: 500
 }
+
+.soldier-btn{
+    font: inherit;
+    border: 1px solid #00695c;
+    background: white1;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .soldier-btn:active{
+    color: red;
+  }
