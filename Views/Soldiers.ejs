@@ -6,12 +6,11 @@
     <%- include('./includes/navigation.ejs') %>
 </li>
 <h1 style="color: white;">Soliders</h1>
-
 <div class="soldier-info">
 
-
+    
         <a class="exit-btn" href="/soldiers/"><div class="inner-circle"></div></a>
-        <% for(let i=0;i<resultsLength; i++) { %>
+        <% for(let i=0;i<soldiersResults.length; i++) { %>
             <% result = soldiersResults[i]; %>
             <% if(result.soldier_id === U_id){ %>
                 <% for(let i=0;i<exercisesLength; i++) { %>
@@ -37,7 +36,7 @@
 <div  class = "scrolling-area">
 
     <div class= "scrolling-element-inside">
-    <% for(let i=0; i < soldiersLength; i++) { %>
+    <% for(let i=0; i < Object.keys(soldierProfiles).length; i++) { %>
         <% soldier = soldierProfiles[i]; %>
         
         <a id="<%= soldier.U_id %>" class="<%= U_id === soldier.U_id ? 'active-soldier-btn' : 'soldier-btn' %>" href="/soldiers/<%= soldier.U_id %>">

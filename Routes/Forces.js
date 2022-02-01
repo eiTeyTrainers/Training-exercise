@@ -5,7 +5,6 @@ const app = express();
 
 
 function saveForces(){
-    let forces = [];
     const p = path.join(
         path.dirname(process.mainModule.filename),
         'data',

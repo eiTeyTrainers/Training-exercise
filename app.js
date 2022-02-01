@@ -3,7 +3,6 @@ const fs = require('fs');
 const express = require('express');
 
 const path = require('path');
-
 const app = express();
 
 const Data = require('./Routes/Soldiers')
@@ -16,8 +15,7 @@ app.set('views', 'views')
 
 
 app.use(express.static(path.join(__dirname, 'public')))
-
-
+// get current of parent id find all of children
 //soldier Site 
 app.get('/soldiers', (req,res,next) =>{
     U_id = '';
@@ -30,17 +28,19 @@ app.get('/soldiers/:U_id', (req,res,next) =>{
     res.render('soldiers', {pageTitle: 'soldiers', path:"/",active , U_id});  
 });
 //sum soldiers
-app.get('/sum-of-soldiers', (req,res,next) =>{
+app.get('/average-of-forces', (req,res,next) =>{
     force_Id = req.params.force;
-    res.render('SumSoldiers', {pageTitle: 'Sum Soldiers',path: "/sumSoldier",force_Id});
+    res.render('averageOfForces', {pageTitle: 'Avarage Of Forces',path: "/avarage-of-forces",force_Id});
 });
 //sum soldiers Req
-app.get('/sum-of-soldiers/:force', (req,res,next) =>{
+app.get('//average-of-forces:force', (req,res,next) =>{
     force_Id = req.params.force;
-    res.render('SumSoldiers', {pageTitle: 'soldiers', path:"/" , force_Id});  
+    res.render('averageOfForces', {pageTitle: 'soldiers', path:"/" , force_Id});  
 });
 app.get('/top-soldiers', (req,res,next) =>{
-    res.render('TopSoldiers', {pageTitle: 'Sum Soldiers',path: "/topSoldier"});
+    soldiersLength = soldierProfiles.length;
+    console.log(soldierProfiles)
+    res.render('TopSoldiers', {pageTitle: 'Top  Soldiers',path: "/topSoldier", soldiersLength});
 });
 
 app.listen(3000);

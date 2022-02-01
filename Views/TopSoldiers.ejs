@@ -1,7 +1,49 @@
 <%- include('./includes/head.ejs') %>
-
+<link rel="stylesheet" href="/css/TopSoldiers.css">
 </head>
 <body>
+    <% sumOfSoldiersArr = [] %>
+    <% nubmers = [1,2] %>
+    
     <%- include('./includes/navigation.ejs') %>
-<h1>Top Soliders</h1>
-    <%- include('./includes/end.ejs') %>
+    
+    <h1>Top Soliders</h1>
+    
+    <div style="  border: 8px solid #828380;block-size: 150px;background-color:rgb(216, 216, 216);width: 50em;height: 47em;position:absolute;left: 66em;margin:10px;">
+        <% for(let i=0;i< soldierProfiles.length; i++) { %>
+            <% soldier = soldierProfiles[i]; %>
+            <% sumOfSoldier = 0 %>
+            <% if(!soldier.U_id == ""){ %>
+                
+                
+                
+                <% for(let i=0;i<Object.keys(soldiersResults).length; i++) { %>
+                    <% result = soldiersResults[i]; %>
+                    <% if(result.soldier_id == soldier.U_id){ %>
+                        <% for(let i=0;i<exerciseObjs.length; i++) { %>
+                            <% exercise = exerciseObjs[i]; %>
+                            <% if(exercise.id == result.exercise_id){ %>
+                                <h1 style="text-align:center;">
+                                    <% sumOfSoldier += result.grade %>
+                                    
+                                </h1>
+                                <% } %>
+                                <% } %>
+                                <% } else if(i==1 && soldier.U_id == "") { %>
+                                    <h1 style="text-align:center;position:relative; top:30%; left: 0% ">לחץ על  חייל</h1>
+                                    <% } %>
+                                    <% } %> 
+                                    <h1><%= soldier.Name %> :<%= sumOfSoldier %> </h1>
+                                    <% } %>
+                                    <% sumOfSoldiersArr += sumOfSoldier  + "," %>
+                                    <% } %>
+                                </div>
+                                <%=  sumOfSoldiersArr %> 
+                                <%= Math.max(sumOfSoldiersArr) %> 
+                                <%= soldiersLength %>
+                                <div style="  border: 8px solid #828380;block-size: 150px;background-color:rgb(216, 216, 216);width: 50em;height: 47em;position:absolute;left: 2em;margin:10px;"></div>     
+                                
+                                
+                                
+                                
+                                <%- include('./includes/end.ejs') %>

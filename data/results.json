@@ -114,19 +114,19 @@
         "id":19,
         "soldier_id":"a123-b3128g-d236",
         "exercise_id":1,
-        "grade":28
+        "grade":4000
     },
     {
         "id":20,
         "soldier_id":"a123-b3128g-d236",
         "exercise_id":2,
-        "grade":38
+        "grade":5000
     },
     {
         "id":21,
         "soldier_id":"a123-b3128g-d236",
         "exercise_id":3,
-        "grade":12
+        "grade":2000
     },
     {
         "id":22,

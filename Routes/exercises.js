@@ -5,7 +5,6 @@ const app = express();
 
 
 function saveExercises(){
-    let exercisesData = [];
     const p = path.join(
         path.dirname(process.mainModule.filename),
         'data',
@@ -17,7 +16,8 @@ function saveExercises(){
             
 
             exercisesData.push(
-                exerciseObjs = exercisesData
+                exerciseObjs = exercisesData,
+                
                 )
             }
         

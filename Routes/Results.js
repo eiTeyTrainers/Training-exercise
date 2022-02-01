@@ -5,7 +5,6 @@ const app = express();
 
 
 function saveResults(){
-    let results = [];
     const p = path.join(
         path.dirname(process.mainModule.filename),
         'data',
@@ -13,7 +12,6 @@ function saveResults(){
         );
         fs.readFile(p,(err,fileContent) =>{
             results = JSON.parse(fileContent);
-            resultsLength = results.length;   
 
     
             results.push(
