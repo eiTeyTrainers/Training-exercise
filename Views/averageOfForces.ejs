@@ -8,8 +8,8 @@
     <h1 style="color: white;">Avarage Of Soldiers</h1>
 
     <div class="soldier-info">
-      <% for(let i=0;i< soldiersLength; i++) { %>
-        <% soldier = soldierProfiles[i]; %>
+      <% for(let i=0;i< soldiers.length; i++) { %>
+        <% soldier = soldiers[i]; %>
         <% if(soldier.Force_id == force_Id){ %>
 
           <li><h1><%= soldier.Name %></h1></li>
@@ -23,22 +23,22 @@
     <div  class = "scrolling-area">
 
       <div class= "scrolling-element-inside">
-    <% for(let i=0;i< forcesLength; i++) { %>
-      <% force_Squad = forceObjs[i]; %>
+    <% for(let i=0;i< forces.length; i++) { %>
+      <% force_Squad = forces[i]; %>
       <% if(force_Squad.parent_id == null){ %>
 
             <li style="list-style-type: none ;"><span id="<%= force_Squad.parent_id %>" class="caret"></span>
               <a style="position: relative; left: 1.5em; width:40em; height: 4em ;" href="/average-of-forces/<%= force_Squad.id %>" class="btn"><%= force_Squad.name %> </a>
               <ul class="nested">
-                <% for(let i=0;i< forcesLength; i++) { %>
-                  <% force_Department = forceObjs[i]; %>
+                <% for(let i=0;i< forces.length; i++) { %>
+                  <% force_Department = forces[i]; %>
                   <% if(force_Department.parent_id == force_Squad.id){ %>
                     <li><span id="<%= force_Department.id %>" class="caret"></span>
                       <a style=" background-color: rgb(43, 46, 45);position: relative; right: 0.1em;width:38em; height: 4em ;" href="/average-of-forces/<%= force_Department.id %>" class="btn"><%= force_Department.name %> </a>
                       <ul class="nested">
                         <!-- Keep going in here tommorow! -->
-                        <% for(let i=0;i< forcesLength; i++) { %>
-                          <% force_Class = forceObjs[i]; %>
+                        <% for(let i=0;i< forces.length; i++) { %>
+                          <% force_Class = forces[i]; %>
                           <% if(force_Class.parent_id == force_Department.id){ %>
                             <li><a style="background-color: rgb(136, 136, 136); position: relative; right: 2.6em; margin:1em; width:36em; height: 4em ;;" href="/average-of-forces/<%= force_Class.id %>" style= "margin: 1em" class="btn"><%= force_Class.name %> </a>
                               <ul class="nested">                                

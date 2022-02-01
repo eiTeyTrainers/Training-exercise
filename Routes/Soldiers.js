@@ -12,9 +12,7 @@ function saveSoldiers(){
         );
         fs.readFile(p,(err,fileContent) =>{
             soldiers = JSON.parse(fileContent);
-            soldiers.push(
-                soldierProfiles = soldiers
-                )
+            
             }
         
         

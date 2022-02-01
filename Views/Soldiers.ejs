@@ -10,11 +10,11 @@
 
     
         <a class="exit-btn" href="/soldiers/"><div class="inner-circle"></div></a>
-        <% for(let i=0;i<soldiersResults.length; i++) { %>
-            <% result = soldiersResults[i]; %>
+        <% for(let i=0;i<results.length; i++) { %>
+            <% result = results[i]; %>
             <% if(result.soldier_id === U_id){ %>
-                <% for(let i=0;i<exercisesLength; i++) { %>
-                    <% exercise = exerciseObjs[i]; %>
+                <% for(let i=0;i<exercisesData.length; i++) { %>
+                    <% exercise = exercisesData[i]; %>
                         <% if(exercise.id == result.exercise_id){ %>
                             <h1 style="text-align:center;">
                                 <%= exercise.Name %> : <%= result.grade %>
@@ -36,8 +36,8 @@
 <div  class = "scrolling-area">
 
     <div class= "scrolling-element-inside">
-    <% for(let i=0; i < Object.keys(soldierProfiles).length; i++) { %>
-        <% soldier = soldierProfiles[i]; %>
+    <% for(let i=0; i < Object.keys(soldiers).length; i++) { %>
+        <% soldier = soldiers[i]; %>
         
         <a id="<%= soldier.U_id %>" class="<%= U_id === soldier.U_id ? 'active-soldier-btn' : 'soldier-btn' %>" href="/soldiers/<%= soldier.U_id %>">
                 <header class="card__header">

@@ -12,11 +12,6 @@ function saveResults(){
         );
         fs.readFile(p,(err,fileContent) =>{
             results = JSON.parse(fileContent);
-
-    
-            results.push(
-                soldiersResults = results
-                )
             }
             
         

@@ -12,13 +12,9 @@ function saveExercises(){
         );
         fs.readFile(p,(err,fileContent) =>{
             exercisesData = JSON.parse(fileContent);
-            exercisesLength = exercisesData.length;
             
 
-            exercisesData.push(
-                exerciseObjs = exercisesData,
-                
-                )
+  
             }
         
         

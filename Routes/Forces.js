@@ -11,13 +11,9 @@ function saveForces(){
         'Forces.json'
         );
         fs.readFile(p,(err,fileContent) =>{
-            forces = JSON.parse(fileContent);
-            forcesLength = forces.length;
-            
+            forces = JSON.parse(fileContent);            
 
-            forces.push(
-                forceObjs = forces
-                )
+   
             }
         
         
