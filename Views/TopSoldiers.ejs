@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="/css/TopSoldiers.css">
 </head>
 <body>
-    <% sumOfSoldiersArr = [] %>
+    <% sumOfSoldiersNum = [] %>
     <% nubmers = [1,2] %>
     
     <%- include('./includes/navigation.ejs') %>
@@ -35,13 +35,21 @@
                                     <% } %> 
                                     <h1><%= soldier.Name %> :<%= sumOfSoldier %> </h1>
                                     <% } %>
-                                    <% sumOfSoldiersArr += sumOfSoldier  + "," %>
+                                    <% sumOfSoldiersNum += sumOfSoldier  + " " %>
                                     <% } %>
                                 </div>
-                                <%=  sumOfSoldiersArr %> 
-                                <%= Math.max(sumOfSoldiersArr) %> 
-                                <%= soldiersLength %>
-                                <div style="  border: 8px solid #828380;block-size: 150px;background-color:rgb(216, 216, 216);width: 50em;height: 47em;position:absolute;left: 2em;margin:10px;"></div>     
+                                <%   sumOfSoldiersArr = sumOfSoldiersNum.split(" ") %>
+                                <%- max = Math.max.apply(Math, sumOfSoldiersArr) %>
+                                <div style="  border: 8px solid #828380;block-size: 150px;background-color:rgb(216, 216, 216);width: 50em;height: 47em;position:absolute;left: 2em;margin:10px;">
+                                    <% for(i=0; i<sumOfSoldiersArr.length; i++){ %>
+                                        <% soldier = soldiers[i] %>
+                                        <% if(sumOfSoldiersArr[i] == max){ %>
+                                            <%= sumOfSoldiersArr[i] %>
+                                            <%= soldier.Name %>
+                                            <h1><% maxSoldier = result.soldier_id %></h1>
+                                        <% } %>
+                                <% } %>
+                                </div>     
                                 
                                 
                                 

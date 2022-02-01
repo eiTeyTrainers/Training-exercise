@@ -38,9 +38,8 @@ app.get('//average-of-forces:force', (req,res,next) =>{
     res.render('averageOfForces', {pageTitle: 'soldiers', path:"/" , force_Id});  
 });
 app.get('/top-soldiers', (req,res,next) =>{
-    soldiersLength = soldiers.length;
-    console.log(soldiersLength)
-    res.render('TopSoldiers', {pageTitle: 'Top  Soldiers',path: "/topSoldier", soldiersLength});
+
+    res.render('TopSoldiers', {pageTitle: 'Top  Soldiers',path: "/topSoldier"   });
 });
 
 app.listen(3000);
