@@ -3,23 +3,26 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-
-function saveResults(){
+function saveSoldiers(){
     const p = path.join(
         path.dirname(process.mainModule.filename),
         'data',
-        'results.json'
+        'soldiers.json'
         );
         fs.readFile(p,(err,fileContent) =>{
-            results = JSON.parse(fileContent);
-            }
+            soldiers = JSON.parse(fileContent);
             
+            }
+        
         
         
     );
             
+    
+    
 }
 
-module.exports = saveResults();
+
+module.exports = saveSoldiers();
 
 

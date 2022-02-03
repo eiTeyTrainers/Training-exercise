@@ -1,0 +1,79 @@
+<%- include('./includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/SoldierProfiles.css">
+</head>
+<body style="background-color: rgb(12, 12, 12);">
+    <%- include('./includes/navigation.ejs') %>
+    
+</li>
+<h1>
+</h1>
+<h1 style="color: white;">Soliders</h1>
+<div class="soldier-info">
+    
+    
+    <a class="exit-btn" href="/soldiers/"><div class="inner-circle"></div></a>
+    <form id="SendData" method="POST" action="/soldiers/<%= U_id %>">
+        <% for(let i=0;i<results.length; i++) { %>
+            <% result = results[i]; %>
+            <% if(result.soldier_id === U_id){ %>
+                <% for(let i=0;i<exercises.length; i++) { %>
+                    
+                    <% exercise = exercises[i]; %>
+                    <% if(exercise.id == result.exercise_id){ %>
+                        <h1 style="text-align:center;">
+                            <% soldier_ID = result.soldier_id;%>
+                            <input style="margin: 2em; padding:0.3em;border-radius: 1em; border-color: aqua;" type="number" name="<%= result.exercise_id %>" value="<%= result.grade %>" > 
+                            <input type="hidden"name=" <%= result.id %>" value="<%= result.id %>">
+                            : <%= exercise.Name %>
+                            <% resultIds = [] %>
+                            <h1><% AllResultId = result.id %></h1>
+
+                                </h1>
+                                <% } %>
+                                <% } %>
+                                <% } else if(i==1 && U_id == "") { %>
+                                    <h1 style="text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
+                                    <% } %>
+                                    
+                                    <% } %>
+                                </form>
+                                <div style="text-align:center;">
+                                    <button style="width:10em;font-size: 18px; border: 2px solid white;border-color: azure; border-radius: 3px;padding: 10px;border-radius: 10em;color: white;background-color:rgb(22, 34, 31) ;" type="submit" form ="SendData" class="apply-button">Apply</button >
+                                    <a style="font-size: 16px;text-decoration: none; border: 2px solid white;border-color: azure; border-radius: 3px;padding: 10px;border-radius: 10em;color: white;background-color:rgb(22, 34, 31) ;" class="cancel-button" href="/soldiers/<%= U_id %>/<%= resultIds %>?edit=false">Cancel</a >
+                                    </div>
+                                    
+                                    
+                                    
+
+
+                
+
+    </div>
+<div  class = "scrolling-area">
+
+    <div class= "scrolling-element-inside">
+    <% for(let i=0; i < Object.keys(soldiers).length; i++) { %>
+        <% soldier = soldiers[i]; %>
+        
+        <a id="<%= soldier.U_id %>" class="<%= U_id === soldier.U_id ? 'active-soldier-btn' : 'soldier-btn' %>" href="/soldiers/<%= soldier.U_id %>">
+                <header class="card__header">
+                    <article >
+                    <h1 class="soldierName soldier-text" style="position: absolute; right: 2em; display:inline;">שם: <%= soldier.Name %></h1>
+                    <h1 class="U_id soldier-text"><%= soldier.U_id %> : מספר אישי</h1>
+                    <h1 class="Force_id" style="position: absolute; right: 2em; display:inline; top:3.2em;"><%= soldier.Force_id %>: כיתה</h1>
+                    <h1 class="id" style="position: absolute; top:3.2em">ID: <%= soldier.id %></h1>
+                    </article>
+                </header>
+            </a>
+
+
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+</div>
+
+    <%- include('./includes/end.ejs') %> 

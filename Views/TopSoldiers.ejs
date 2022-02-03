@@ -3,7 +3,6 @@
 </head>
 <body>
     <% sumOfSoldiersNum = [] %>
-    <% nubmers = [1,2] %>
     
     <%- include('./includes/navigation.ejs') %>
     
@@ -20,36 +19,33 @@
                 <% for(let i=0;i<results.length; i++) { %>
                     <% result = results[i]; %>
                     <% if(result.soldier_id == soldier.U_id){ %>
-                        <% for(let i=0;i<exercisesData.length; i++) { %>
-                            <% exercise = exercisesData[i]; %>
+                        <% for(let i=0;i<exercises.length; i++) { %>
+                            <% exercise = exercises[i]; %>
                             <% if(exercise.id == result.exercise_id){ %>
-                                <h1 style="text-align:center;">
                                     <% sumOfSoldier += result.grade %>
-                                    
-                                </h1>
                                 <% } %>
                                 <% } %>
                                 <% } else if(i==1 && soldier.U_id == "") { %>
-                                    <h1 style="text-align:center;position:relative; top:30%; left: 0% ">לחץ על  חייל</h1>
                                     <% } %>
                                     <% } %> 
-                                    <h1><%= soldier.Name %> :<%= sumOfSoldier %> </h1>
                                     <% } %>
                                     <% sumOfSoldiersNum += sumOfSoldier  + " " %>
                                     <% } %>
                                 </div>
                                 <%   sumOfSoldiersArr = sumOfSoldiersNum.split(" ") %>
-                                <%- max = Math.max.apply(Math, sumOfSoldiersArr) %>
+                                <% max = Math.max.apply(Math, sumOfSoldiersArr) %>
                                 <div style="  border: 8px solid #828380;block-size: 150px;background-color:rgb(216, 216, 216);width: 50em;height: 47em;position:absolute;left: 2em;margin:10px;">
                                     <% for(i=0; i<sumOfSoldiersArr.length; i++){ %>
-                                        <% soldier = soldiers[i] %>
+                                        <% soldier = soldiers[i] %>         
                                         <% if(sumOfSoldiersArr[i] == max){ %>
-                                            <%= sumOfSoldiersArr[i] %>
-                                            <%= soldier.Name %>
-                                            <h1><% maxSoldier = result.soldier_id %></h1>
+                                            <h1 style="  text-align: center;">
+                                                <%= soldier.Name %>
+                                                <%= sumOfSoldiersArr[i] %>
+                                            </h1>
+                                            <% maxSoldier = result.soldier_id %>
                                         <% } %>
                                 <% } %>
-                                </div>     
+                                </div>
                                 
                                 
                                 

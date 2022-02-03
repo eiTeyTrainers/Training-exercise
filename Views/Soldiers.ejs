@@ -1,7 +1,9 @@
 <%- include('./includes/head.ejs') %>
 
-<link rel="stylesheet" href="../public/css/SoliderProfiles.css" />
+<link rel="stylesheet" href="/css/SoldierProfiles.css">
 </head>
+<script  src="/Routes/Results.js"></script>
+<script  src="/app.js"></script>
 <body style="background-color: rgb(12, 12, 12);">
     <%- include('./includes/navigation.ejs') %>
 </li>
@@ -13,24 +15,28 @@
         <% for(let i=0;i<results.length; i++) { %>
             <% result = results[i]; %>
             <% if(result.soldier_id === U_id){ %>
-                <% for(let i=0;i<exercisesData.length; i++) { %>
-                    <% exercise = exercisesData[i]; %>
+                <% for(let i=0;i<exercises.length; i++) { %>
+                    <% exercise = exercises[i]; %>
                         <% if(exercise.id == result.exercise_id){ %>
                             <h1 style="text-align:center;">
                                 <%= exercise.Name %> : <%= result.grade %>
                             </h1>
                             <% } %>
                         <% } %>
-                    <% } else if(i==1 && U_id == "") { %>
-                        <h1 style="text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
-                        <% } %>
-                        
-                        <% } %>
-                
+                            <% } else if(i==1 && U_id == "") { %>
+                                <h1 style="text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
                                 
+                                <% } %>
+                                
+                                <% } %>
+                                <% if(!U_id == "") {%>
+                                <div style="text-align:center;">
+                                    <a style="font-size: 25px;text-decoration: none; border: 2px solid white;border-color: azure; padding: 10px;border-radius: 10em;color: white;background-color:rgb(22, 34, 31) ;"  class="edit-button" href="/edit-soldiers/<%= U_id %>/<%= resultIds %>?edit=true">Edit</a>
+                                </div>
+                                <% } %>
 
 
-                
+
 
     </div>
 <div  class = "scrolling-area">
@@ -58,4 +64,7 @@
     </div>  
     
 </div>
-    <%- include('./includes/end.ejs') %> 
+
+</body>
+
+</html>
