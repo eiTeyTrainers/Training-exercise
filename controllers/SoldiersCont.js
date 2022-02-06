@@ -19,6 +19,7 @@ exports.getSoldiersByID = (req,res,next) => {
     res.render('soldiers', {pageTitle: 'soldiers', path:"/",active , U_id, editing,resultIds});  
 };
 
+
 exports.getEditSoldierById = (req,res,next) =>{
     const editing = req.query.edit;
     U_id = req.params.U_id;

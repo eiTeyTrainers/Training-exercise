@@ -31,6 +31,46 @@
                                     <% } %>
                                     <% sumOfSoldiersNum += sumOfSoldier  + " " %>
                                     <% } %>
+                                    <% currSoldiers = 0 %>
+                                    <% for(let i=0;i< soldiers.length; i++) { %>
+                                      <% soldier = soldiers[i]; %> 
+                                      <% if(soldier.Force_id == force_Id){ %>
+                                        <% currSoldiers  += 1 %> 
+                                      <% } %>
+                                    <% } %>
+                                      <% for(let i=0;i< soldiers.length; i++) { %>
+                                        <% var prevResultArr = resultArr %>
+                                        <% var resultArr = [] %>
+                                        <% soldier = soldiers[i]; %>
+                                        
+                                        <% if(soldier.Force_id == force_Id){ %>
+                                          <% for(let i=0;i< results.length; i++) { %>
+                                            <% result = results[i]; %>
+                                            <% prevresult = results[i]; %>
+                                            <% if(result.soldier_id == soldier.U_id){ %>
+                                            
+                                            <% for(let i=0;i< exercises.length; i++) { %>
+                                              <% lastExercise = exercises[i]; %>
+                                              <% exercise = exercises[i]; %>
+                                              
+                                              <% if(exercise.id == result.exercise_id){ %>
+                                                <% resultArr.push(result.grade) %>
+                                                <% } %>
+                                              <% } %>  
+                                            <% } %>
+                                          <% } %>
+                                        <% } %>           
+                                      <% } %>
+                                    <% var sum = resultArr.map(function (num, idx) { %>
+                                      <% return num + prevResultArr[idx]; %>
+                                      <% }); %>
+                                      
+                                      <% for(let i=0;i < exercises.length; i++) { %>
+                                        
+                                        <% let average = sum[i] / currSoldiers %>
+                                        <% exercise = exercises[i] %>
+                                        <h1 style="text-align: right; padding: 2.1em;"><%= exercise.Name %> : <%= average %></h1>
+                                        <% } %>
                                 </div>
                                 <%   sumOfSoldiersArr = sumOfSoldiersNum.split(" ") %>
                                 <% max = Math.max.apply(Math, sumOfSoldiersArr) %>
@@ -45,9 +85,15 @@
                                             <% maxSoldier = result.soldier_id %>
                                         <% } %>
                                 <% } %>
+                             
                                 </div>
                                 
                                 
+                                <% for(let i=0;i< forces.length; i++) { %>
+                                  <% force = forces[i]; %>
+                                    <h1 style="text-align: center;"  ><%= force.name %></h1>
+                                    <% } %>
+                                      
                                 
                                 
                                 <%- include('./includes/end.ejs') %>

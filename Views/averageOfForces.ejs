@@ -4,26 +4,90 @@
 
 <link rel="stylesheet" href="/css/treeview.css">
 </head>
-    <%- include('./includes/navigation.ejs') %>
-    <h1 style="color: white;">Avarage Of Soldiers</h1>
+<%- include('./includes/navigation.ejs') %>
+<h1 style="color: white;">Avarage Of Soldiers</h1>
 
-    <div class="soldier-info">
+<div class="soldier-info">
+  <% currSoldiers = 0 %>
+  <% for(let i=0;i< soldiers.length; i++) { %>
+    <% soldier = soldiers[i]; %> 
+    <% if(soldier.Force_id == force_Id){ %>
+      <% currSoldiers  += 1 %> 
+    <% } %>
+  <% } %>
+  <% if(currSoldiers > 1){ %>
+    <% for(let i=0;i< soldiers.length; i++) { %>
+      <% var prevResultArr = resultArr %>
+      <% var resultArr = [] %>
+      <% soldier = soldiers[i]; %>
+      
+      <% if(soldier.Force_id == force_Id){ %>
+        <% for(let i=0;i< results.length; i++) { %>
+          <% result = results[i]; %>
+          <% prevresult = results[i]; %>
+          <% if(result.soldier_id == soldier.U_id){ %>
+          
+          <% for(let i=0;i< exercises.length; i++) { %>
+            <% lastExercise = exercises[i]; %>
+            <% exercise = exercises[i]; %>
+            
+            <% if(exercise.id == result.exercise_id){ %>
+              <% resultArr.push(result.grade) %>
+              <% } %>
+            <% } %>  
+          <% } %>
+        <% } %>
+      <% } %>           
+    <% } %>
+  <% var sum = resultArr.map(function (num, idx) { %>
+    <% return num + prevResultArr[idx]; %>
+    <% }); %>
+    
+    <% for(let i=0;i< forces.length; i++) { %>
+      <% force = forces[i]; %>
+      <% if(force_Id == force.id) { %>
+        <h1 style="text-align: center;"  ><%= force.name %></h1>
+        <% } %>
+        <% } %>
+        <% for(let i=0;i < exercises.length; i++) { %>
+          
+          <% let average = sum[i] / currSoldiers %>
+          
+          <% exercise = exercises[i] %>
+          <h1 style="text-align: right; padding: 2.1em;"><%= exercise.Name %> : <%= average %></h1>
+          <% } %>
+    <% }else{ %>
+      <% for(let i=0;i< forces.length; i++) { %>
+        <% force = forces[i]; %>
+        <% if(force_Id == force.id) { %>
+          <h1 style="text-align: center;"  ><%= force.name %></h1>
+          <% } %>
+          <% } %>
       <% for(let i=0;i< soldiers.length; i++) { %>
         <% soldier = soldiers[i]; %>
-
-        
         <% if(soldier.Force_id == force_Id){ %>
-
-          <li><h1><%= soldier.Name %></h1></li>
-          
+        <% for(let i=0;i<results.length; i++) { %>
+          <% result = results[i]; %>
+          <% for(let i=0;i<exercises.length; i++) { %>
+            <% exercise = exercises[i]; %>
+            <% if(exercise.id == result.exercise_id){ %>
+              <% if(result.soldier_id == soldier.U_id) { %>
+              <h1 style="text-align: right; padding: 2.1em;"><%= exercise.Name %> : <%= result.grade %></h1>
+              <% } %>
+            <% } %>
+            <% } %>
         <% } %>
-        
-      <% } %> 
-
-
+      <% } %>
+    <% } %>
+<% } %>
+                      
+                      
+                      
+          
+  
     </div>
-    <div  class = "scrolling-area">
 
+    <div  class = "scrolling-area">
       <div class= "scrolling-element-inside">
         <% force_Type = "Squad" %>
     <% for(let i=0;i< forces.length; i++) { %>
@@ -47,11 +111,29 @@
                           <% force_Class = forces[i]; %>
                           <% force_Id = force_Class.id %>
                           <% if(force_Class.parent_id == force_Department.id){ %>
-
-                            <li><a  style="background-color: rgb(136, 136, 136); position: relative; right: 2.6em; margin:1em; width:36em; height: 4em ;;" href="/average-of-forces/<%= force_Class.id %>" style= "margin: 1em" class="btn"><%= force_Class.name %> </a>
-                              <ul class="nested">  
-                                <% force_Type = "Squad" %>
                               
+
+                              <% for(let i=0;i< soldiers.length; i++) { %>
+                                <% soldier = soldiers[i]; %>
+                                <% for(let i=0;i< results.length; i++) { %>
+                                  <% result = results[i]; %>       
+                                  <% if(soldier.Force_id == force_Id){ %>
+                                    <% if(result.soldier_id == soldier.U_id){ %>
+                                      
+                                      <% for(let i=0; i< exercises.length; i++){ %>
+                                        <% exercise = exercises[i]; %>
+                                      <% if(exercise.id == i) %>
+
+                                      <% exercisea = 0 %>
+                                      <%= exercisea += result.grade %>
+ 
+                                      <% } %> 
+                                    <% } %> 
+                                  <% } %>
+                                <% } %> 
+                              <% } %>
+                            <li><a id="" style="background-color: rgb(136, 136, 136); position: relative; right: 2.6em; margin:1em; width:36em; height: 4em ;;" href="/average-of-forces/<%= force_Class.id %>" style= "margin: 1em" class="btn"><%= force_Class.name %> </a>
+                              <ul class="nested">                                
                               </ul>
                           <% } %>
                         <% } %>
