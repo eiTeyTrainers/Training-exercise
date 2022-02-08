@@ -104,9 +104,9 @@ main {
 .soldier-btn {
   font: inherit;
   text-decoration: none;
-  border: 2px solid #00695c;
-  color: #00695c;
-  background: white;
+  border: 2px solid #00b19c;
+  color: #00b19c;
+  background: rgb(33, 36, 37);
   border-radius: 16px;
   position: relative;
   left:1em;
@@ -120,7 +120,7 @@ main {
 .soldier-btn:active {
   font: inherit;
   text-decoration: none;
-  border: 2px solid #00695c;
+  border: 2px solid #00b19c;
   color: #00695c;
   background: white;
   border-radius: 16px;
@@ -145,7 +145,7 @@ main {
 .active-soldier-btn{
   font: inherit;
   text-decoration: none;
-  border: 2px solid #00695c;
+  border: 2px solid #009987;
   color: #182b28;
   background: white;
   border-radius: 16px;
@@ -156,7 +156,7 @@ main {
   margin:10px;
   padding: 0px;
   display:block;
-  background-color: #2f4b47;
+  background-color: #1a685b;
   transform-origin: 2px 30% 10px;
   transform: scale(1.05,1);
   color: white;
@@ -173,7 +173,8 @@ main {
 .soldier-info{
   border: 8px solid #828380;
   block-size: 150px;
-  background-color:rgb(216, 216, 216);
+  background-color:rgb(46, 50, 52);
+  border-color: rgb(83, 90, 94);
   width: 60em;
   height: 47em;
   position:absolute;
@@ -192,7 +193,7 @@ main {
   bottom:1em;
   right:0.23em;
   border-color: rgb(37, 37, 37);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(83, 83, 83, 0);
   
 }
 .exit-btn{
@@ -217,7 +218,7 @@ main {
 	font-family: serif;
 	line-height: 1;
   transform-origin: 46% 80%;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .exit-btn:before {
   content: "\d7";

@@ -1,44 +1,45 @@
 <%- include('./includes/head.ejs') %>
 
-<link rel="stylesheet" href="../public/css/SoliderProfiles.css" />
+<link rel="stylesheet" href="/css/SoldierProfiles.css">
 </head>
+<script  src="/Routes/Results.js"></script>
+<script  src="/app.js"></script>
 <body style="background-color: rgb(12, 12, 12);">
     <%- include('./includes/navigation.ejs') %>
 </li>
 <h1 style="color: white;">Soliders</h1>
-
 <div class="soldier-info">
 
-
+    
         <a class="exit-btn" href="/soldiers/"><div class="inner-circle"></div></a>
-        <% for(let i=0;i<resultsLength; i++) { %>
-            <% result = soldiersResults[i]; %>
+        <% for(let i=0;i<results.length; i++) { %>
+            <% result = results[i]; %>
             <% if(result.soldier_id === U_id){ %>
-                <% for(let i=0;i<exercisesLength; i++) { %>
-                    <% exercise = exerciseObjs[i]; %>
+                <% for(let i=0;i<exercises.length; i++) { %>
+                    <% exercise = exercises[i]; %>
                         <% if(exercise.id == result.exercise_id){ %>
-                            <h1 style="text-align:center;">
+                            <h1 style="color:white; text-align:center;">
                                 <%= exercise.Name %> : <%= result.grade %>
                             </h1>
                             <% } %>
                         <% } %>
-                    <% } else if(i==1 && U_id == "") { %>
-                        <h1 style="text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
-                        <% } %>
-                        
-                        <% } %>
-                
+                            <% } else if(i==1 && U_id == "") { %>
+                                <h1 style="color:white;text-align:center;position:relative; top:30%; left: 0% " >לחץ על  חייל</h1>
                                 
-
-
-                
-
+                                <% } %>
+                                
+                                <% } %>
+                                <% if(!U_id == "") {%>
+                                <div style="text-align:center;">
+                                    <a style="font-size: 25px;text-decoration: none; border: 2px solid white;border-color: #006b6b; padding: 10px;border-radius: 10em;color: white;background-color:rgb(22, 34, 31) ;"  class="edit-button" href="/edit-soldiers/<%= U_id %>/<%= resultIds %>?edit=true">Edit</a>
+                                </div>    
+                                <% } %>
     </div>
 <div  class = "scrolling-area">
 
     <div class= "scrolling-element-inside">
-    <% for(let i=0; i < soldiersLength; i++) { %>
-        <% soldier = soldierProfiles[i]; %>
+    <% for(let i=0; i < Object.keys(soldiers).length; i++) { %>
+        <% soldier = soldiers[i]; %>
         
         <a id="<%= soldier.U_id %>" class="<%= U_id === soldier.U_id ? 'active-soldier-btn' : 'soldier-btn' %>" href="/soldiers/<%= soldier.U_id %>">
                 <header class="card__header">
@@ -59,4 +60,7 @@
     </div>  
     
 </div>
-    <%- include('./includes/end.ejs') %> 
+
+</body>
+
+</html>

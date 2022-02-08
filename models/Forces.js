@@ -4,21 +4,16 @@ const express = require('express');
 const app = express();
 
 
-function saveExercises(){
-    let exercisesData = [];
+function saveForces(){
     const p = path.join(
         path.dirname(process.mainModule.filename),
         'data',
-        'exercises.json'
+        'Forces.json'
         );
         fs.readFile(p,(err,fileContent) =>{
-            exercisesData = JSON.parse(fileContent);
-            exercisesLength = exercisesData.length;
-            
+            forces = JSON.parse(fileContent);            
 
-            exercisesData.push(
-                exerciseObjs = exercisesData
-                )
+   
             }
         
         
@@ -29,9 +24,7 @@ function saveExercises(){
     
 }
 
-    
 
-module.exports = saveExercises()
-
+module.exports = saveForces();
 
 

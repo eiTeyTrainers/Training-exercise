@@ -234,23 +234,6 @@
             "name": "כיתה 3",
             "is_deleted": false,
             "parent_id": 12
-        },
-        {
-            "id": 40,
-            "name": "כיתה 1",
-            "is_deleted": false,
-            "parent_id": 13
-        },
-        {
-            "id": 41,
-            "name": "כיתה 2",
-            "is_deleted": false,
-            "parent_id": 13
-        },
-        {
-            "id": 42,
-            "name": "כיתה 3",
-            "is_deleted": false,
-            "parent_id": 13
         }
+
 ]
