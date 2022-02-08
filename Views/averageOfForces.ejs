@@ -37,7 +37,7 @@
             
             <% if(exercise.id == result.exercise_id){ %>
               <% resultArr.push(result.grade) %>
-              <%= resultArr %>
+              <% resultArr %>
               <% } %>
             <% } %>  
           <% } %>
@@ -77,7 +77,7 @@
             <% exercise = exercises[i]; %>
             <% if(exercise.id == result.exercise_id){ %>
               <% if(result.soldier_id == soldier.U_id) { %>
-                <h1 style="text-align: right; padding: 2.1em;"><%= exercise.Name %> : <%= result.grade %></h1>
+                <h1 style="text-align: right; padding: 2.1em; color:white"><%= exercise.Name %> : <%= result.grade %></h1>
                 <% } %>
                 <% } %>
                 <% } %>
@@ -162,7 +162,7 @@
                                     <!--Fixlater-->
                                     <%  sum1 += chunkedResults[0][0] %>
                                     
-                                     <%= sum1 %><br>
+                                     <% sum1 %><br>
                                     
                                     <% } %>
                                     
@@ -174,7 +174,7 @@
                                     
                                     
                                     
-                                    
+                                        
                                     <% } %>
                                     <% } %>
                                     <% } %>
@@ -197,15 +197,30 @@
                                             <%  sumOfSquad.push(squadSum[i]); %>
                                             <% } %>
                                             <!--fix-->
+
+                                              <% sumExercise = squadSum %>
                                               <% sumExercise1 += squadSum[0] %>
                                               <% sumExercise2 += squadSum[1] %>
                                               <% sumExercise3 += squadSum[2] %>
-                                              <% lengthOfSoldiersInArr = lengthOfExercisesInArr / 3 %>
-
-                                  <% } %>
-                                    <%= (sumExercise1)/lengthOfSoldiersInArr %><br>
-                                    <%= (sumExercise2)/lengthOfSoldiersInArr %><br>
-                                    <%= (sumExercise3)/lengthOfSoldiersInArr %><br>
+                                            <% lengthOfSoldiersInArr = lengthOfExercisesInArr / 3 %>
+                                            
+                                            <% } %>
+                                            <% for(let i=0; i< exercises.length; i++){  %>
+                                              <% exercise = exercises[i] %>
+                                                <%= sumExercise[i] = ((squadSum[i])/lengthOfSoldiersInArr).toFixed(2)%>
+                                            
+                                            
+                                            : <%= exercises[i].Name %><br>
+                                            <% } %>
+                                            <h1 style="color:white; text-align: center; padding: 1em ">
+                                              <%= ((sumExercise1)/lengthOfSoldiersInArr).toFixed(2)%> : <%= exercises[0].Name %><br>
+                                            </h1>
+                                              <h1 style="color:white; text-align: center; padding: 1em;">
+                                                <%= ((sumExercise2)/lengthOfSoldiersInArr).toFixed(2)%> : <%= exercises[1].Name %><br>
+                                              </h1>
+                                                <h1 style="color:white; text-align: center; padding: 1em;">
+                                              <%= ((sumExercise3)/lengthOfSoldiersInArr).toFixed(2)%> : <%= exercises[2].Name %><br>
+                                            </h1>
                                   
                                 <% } %>
                            

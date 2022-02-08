@@ -92,11 +92,56 @@
                                                       <% for(let i=0;i< forces.length; i++) { %>
                                                         <% force = forces[i]; %> 
                                                         <% Force_Id = force.id %>
-                                                         <% if(force.id == force_Id){ %>
-                                                          <h1 style="text-align: right; padding: 2.1em;"><%= exercise.Name %> : <%= average %></h1>-->
-
+                                                        <% if(force.id == U_id){ %>
+                                                          <% for(let i=0;i< soldiers.length; i++) { %>
+                                                            <% var prevResultArr = resultArr %>
+                                                            <% var resultArr = [] %>
+                                                            <% soldier = soldiers[i]; %>
+                                                            
+                                                            <% if(soldier.Force_id == U_id){ %>
+                                                              <% for(let i=0;i< results.length; i++) { %>
+                                                                <% result = results[i]; %>
+                                                                <% prevresult = results[i]; %>
+                                                                <% if(result.soldier_id == soldier.U_id){ %>
+                                                                  
+                                                                <% for(let i=0;i< exercises.length; i++) { %>
+                                                                  <% lastExercise = exercises[i]; %>
+                                                                  <% exercise = exercises[i]; %>
+                                                                  
+                                                                  <% if(exercise.id == result.exercise_id){ %>
+                                                                    <% resultArr.push(result.grade) %>
+                                                                    <% } %>
+                                                                  <% } %>  
+                                                                <% } %>
+                                                              <% } %>
+                                                            <% } %>           
                                                           <% } %>
-                                                      <% } %>
+                                                        <% var sum = resultArr.map(function (num, idx) { %>
+                                                          <% return num + prevResultArr[idx]; %>
+                                                          <% for(let i=0; i< soldiers.length; i++){ %>
+                                                            <% if(soldier.Force_Id == U_id){ %>
+                                                              <% currSoldiers  += 1 %> 
+                                                          <% } %>
+                                                        <% } %>
+                                                          <% }); %>
+                                                        <% for(let i=0;i< forces.length; i++) { %>
+                                                          <% force = forces[i]; %>
+                                                          <% if(U_id == force.id && currSoldiers < 1) { %>
+                                                            <h1 style="text-align: center; color: white;"  ><%= force.name %></h1>
+                                                            
+                                                            <% } %>
+                                                            <% } %>
+                                                            <% for(let i=0;i < exercises.length; i++) { %>
+                                                              
+                                                              <% currSoldiers %>
+                                                                <% let average = sum[i] / 2 %>
+                                                                
+                                                                <% exercise = exercises[i] %>
+                                                                <h1 style="text-align: right; padding: 2.1em; color: white;"><%= exercise.Name %> : <%= average %></h1>
+                                                                <% } %>
+                                                        
+                                                          <% } %>
+                                                          <% } %>
                                         <% } %>
                                 </div>
                                 <% sumOfSoldiersArr = sumOfSoldiersNum.split(" ") %>
@@ -108,12 +153,40 @@
                                             <h1 style="  text-align: center;">
                                               <% U_id = soldier.U_id %>
                                               <a style="display: block; font-size: 25px; width: 30em; position:relative; left:0.5em; text-decoration: none; border: 2px solid white;border-color: #006b6b; padding: 10px;border-radius: 1em;color: white;background-color:rgb(22, 34, 31) ;" href="/top-soldiers/<%= soldier.U_id %>"><%= soldier.Name %></a>
-                                            </h1>
-                                            <% maxSoldier = result.soldier_id %>
-                                            <h1 style="  text-align: center;">
-                                            <a style="display: block; font-size: 25px; width: 30em; position:relative; left:0.5em; text-decoration: none; border: 2px solid white;border-color: #006b6b; padding: 10px;border-radius: 1em;color: white;background-color:rgb(22, 34, 31) ;" href="/top-soldiers/<%= force.id %>"><%= force.name %></a>
-                                          </h1>
-                                            <% } %>
+                                              <% maxClassId = 39 %>
+                                              <% sumExerciseNum = 0 %>
+                                              <% sumExerciseArr = [] %>
+                                              <% for(let i =0;i< forces.length; i++){ %>
+                                                <% force=forces[i] %>
+                                                <% if(force.parent_id !== null && force.parent_id !== 1  && force.parent_id !== 2 && force.parent_id !== 3){ %>
+                                                  <% for(let i =0;i< soldiers.length; i++){ %>
+                                                    <% soldier=soldiers[i] %>
+                                                    <% if(soldier.Force_id == force.id){ %>
+                                                      
+                                                      <% soldier.Name %>
+                                                      <% for(i=0; i< results.length; i++){ %>
+                                                        <% result = results[i]; %>
+                                                        <% if(result.soldier_id == soldier.U_id){ %>
+                                                          <% result.grade %>
+                                                          <% sumExercise[soldier.U_id]  =  result.grade %>
+                                                          <% sumExerciseArr.push(result.grade) %>
+                                                          <% } %>  
+                                                          <% } %>
+                                                          <% } %>
+                                                          <% } %>
+                                                          <% } %>
+                                                          
+                                                          
+                                                          
+                                                          <% if(maxClassId == force.id){ %>
+                                                          </h1>
+                                                          <h1 style="  text-align: center;">
+                                                            <a style="display: block; font-size: 25px; width: 30em; position:relative; left:0.5em; text-decoration: none; border: 2px solid white;border-color: #006b6b; padding: 10px;border-radius: 1em;color: white;background-color:rgb(22, 34, 31) ;" href="/top-soldiers/<%= force.id %>"><%= force.name %></a>
+                                                          </h1>
+                                                          <% } %>
+                                                          <% } %>
+                                                          <%= sumExerciseArr %>
+                                                          <% } %>
                                             <% } %>
                                             
                                             
